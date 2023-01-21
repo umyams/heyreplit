@@ -75,13 +75,16 @@ pilih packages
 
 lalu di kolom seacrh ketik 
 ```
-PyYAML
+yaml
 ```
 
-lalu klik tanda + atau install di PyYAML
+lalu klik tanda + atau install di yaml8
+
+pastikan untuk menginstall yaml8 karna kalau yg lain bakalan error dan harus mengulang dari awal lagi
 
 
-![Screenshot 2023-01-21 201656](https://user-images.githubusercontent.com/87502414/213868889-81be1602-edb5-4dc4-a6d7-fa32d22cbfa5.png)
+![Screenshot 2023-01-21 210114](https://user-images.githubusercontent.com/87502414/213870512-2e9bf8c7-943a-404a-b23d-225394c1a220.png)
+
 
 
 
@@ -116,7 +119,22 @@ DELETE_MSG:                            # fitur untuk delete pesan (kosongi untuk
                copas
                ``` 
                disamping MODE untuk mengaktifkan mode copas
-               
- *
+* DELAY :      delay dalam detik(second), sesuaikan kebutuhan 
+* DELETE_MSG : fitur untuk auto delete pesan yg udah dikirim, kosong = default atau nonaktif, isi dg 
+```
+Y
+```
+untuk mengaktifkan
+
+
 pesan.txt
 tinggal diedit sesuka hati pisahkan tiap kata dg enter
+
+# Start bot
+setelah selesai konfigurasi tinggal klik RUN untuk menjalankan BOT
+
+
+tampilan apabila bot berjalan dg baik
+
+
+![Screenshot 2023-01-21 210223](https://user-images.githubusercontent.com/87502414/213870630-1793f538-4cf3-48d5-99bd-9ff4a66209d7.png)
