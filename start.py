@@ -2,6 +2,7 @@ import replit
 import keep_alive
 import random, yaml, time, sys, requests
 from threading import Thread
+from keep_alive import keep_alive
 class Discord:
 
     def __init__(self, t):
@@ -27,33 +28,38 @@ with open("pesan.txt", "r") as f:
     words = f.readlines()
 def main():
     replit_exit = False
-    keep_alive.keep_alive()
+    keep_alive()
     replit.clear()
-    print(f"{y}[{b}#{y}]{w} Loading... ")
+    try:
+        with open('settings.yaml') as cfg:
+            conf = yaml.load(cfg, Loader=yaml.FullLoader)
 
-    with open('settings.yaml') as cfg:
-        conf = yaml.load(cfg, Loader=yaml.FullLoader)
+        if not conf['TOKEN']:
+            print("Periksa Token anda di settings.yaml")
+            sys.exit()
 
-    if not conf['TOKEN']:
-        print("Periksa Token anda di settings.yaml")
-        sys.exit()
+        if not conf['CHANNEL_ID']:
+            print("masukkan Channel ID di settings.yaml")
+            sys.exit()
 
-    if not conf['CHANNEL_ID']:
-        print("masukkan Channel ID di settings.yaml")
-        sys.exit()
-
-    mode = conf['MODE']
-    delay = conf['DELAY']
-    del_msg = conf['DELETE_MSG']
+        mode = conf['MODE']
+        delay = conf['DELAY']
+        del_msg = conf['DELETE_MSG']
     
-    if not mode: 
-        mode = "teks"
+        if not mode: 
+          mode = "teks"
+    except:
+      replit.clear()
+      replit_exit = True
+      return
+      
+    if replit_exit == False:
+      
+      while True:
+          for token in conf['TOKEN']:
+              try:
 
-    while True:
-        for token in conf['TOKEN']:
-            try:
-
-                for chan in conf['CHANNEL_ID']:
+                  for chan in conf['CHANNEL_ID']:
 
                     Bot = Discord(token)
                     me = Bot.getMe()['username'] + "#" + Bot.getMe()['discriminator']
@@ -75,11 +81,11 @@ def main():
                             Bot.deleteMessage(chan, send['id'])
                             print("[{}][DELETE] {}".format(me, send['id']))
                         
-            except:
+              except:
                 print(f"[Error] {token} : TOKEN INVALID ATAU USER DI BAN DARI SERVER, CEK COBA")
         
-        print("delay {} detik".format(delay))
-        time.sleep(delay)
+              print("delay {} detik".format(delay))
+              time.sleep(delay)
 
 if __name__ == '__main__':
     try:
