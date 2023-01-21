@@ -30,6 +30,8 @@ Buka
 https://replit.com/
 ```
 create account lalu login
+
+
 lalu klik create
 
 
@@ -51,6 +53,8 @@ https://github.com/umyams/heyreplit
 ```
 di kolom github url lalu klik import
 
+
+
 proses import lumayan lama jadi ditunngu saja
 
 
@@ -67,6 +71,8 @@ lalu akan muncul keterangan error seperti ini
 
 
 dibagian tools pojok kiri bawah
+
+
 pilih packages
 
 
@@ -125,6 +131,15 @@ DELETE_MSG:                            # fitur untuk delete pesan (kosongi untuk
 Y
 ```
 untuk mengaktifkan
+
+
+dibawah ini contoh settings.yaml untuk 2 akun dan 2 channel menggunakan mode copas
+
+
+
+![Screenshot 2023-01-21 203950](https://user-images.githubusercontent.com/87502414/213870824-691a3c57-6c73-4c00-ab97-fb1d51247c84.png)
+
+
 
 
 pesan.txt
